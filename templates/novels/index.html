@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  {% for novel in novels %}
+  <a href="#">
+  <div class="box">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+          <strong>{{ novel.title|truncatechars_html:35 }}</strong>
+          <br>
+          {{ novel.text|truncatechars_html:100 }}
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
