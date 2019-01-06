@@ -1,11 +1,33 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block body %}
+<div>
 <form method="post">
-    {% csrf_token %}
-    <table>
-        {{ form }}
-    </table>
-    <button type="submit">
+  {% csrf_token %}
+
+  <div class="field">
+    <label class="label">{{ form.title.label }}</label>
+    <div class="control">
+      {{ form.title }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">{{ form.text.label }}</label>
+    <div class="control">
+      {{ form.text }}
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">投稿</button>
+    </div>
+    <div class="control">
+      <a href="javascript:void(0);" onclick="window.history.back();" class="button is-text">Cancel</a>
+    </div>
+  </div>
 </form>
+
+</div>
 {% endblock %}

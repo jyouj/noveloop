@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.views import generic
 
 from .models import Novel
+from .forms import NewForm
 
 # Chap.2-3
 class IndexListView(generic.ListView):
@@ -13,7 +14,7 @@ class IndexListView(generic.ListView):
 class NovelCreateView(generic.CreateView):
     template_name = "novels/new.html"
     model = Novel
-    fields = ('title', 'text',)
+    form_class = NewForm
 
     def form_valid(self, form):
         novel = form.save(commit=False)
