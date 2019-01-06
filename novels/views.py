@@ -20,3 +20,10 @@ class NovelCreateView(generic.CreateView):
         novel = form.save(commit=False)
         novel.save()
         return redirect('novels:index')
+
+# Chap.2-6
+class NovelDetailView(generic.DetailView):
+    template_name = "novels/novel_detail.html"
+    model = Novel
+    context_object_name = "novel"
+    pk_url_kwarg = 'novel_id'

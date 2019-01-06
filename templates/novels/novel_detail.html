@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body %}
+<article class="message">
+  <div class="message-header">
+    <p>{{ novel.title }}</p>
+  </div>
+  <div class="message-body">
+    {{ novel.text|linebreaksbr }}
+  </div>
+</article>
+
+{% endblock %}
